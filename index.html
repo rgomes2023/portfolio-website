@@ -10,14 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body class="main-content">
 
     <!-- ========================= HOME ========================= -->
-    <header class="container header active" id="home">
+    <header class="container header active reveal" id="home">
         <div id="particles-js" class="particle-bg"></div>
 
         <div class="header-content">
@@ -32,9 +31,9 @@
                 <h1 class="name">A Cloud Engineer.</h1>
 
                 <p>
-                    "I'm an aspiring Cloud Engineer passionate about building scalable, secure, 
+                    I'm an aspiring Cloud Engineer passionate about building scalable, secure, 
                     and efficient cloud solutions. From architecting infrastructures to automating 
-                    deployments, I thrive on optimizing cloud environments through innovation."
+                    deployments, I thrive on optimizing cloud environments through innovation.
                 </p>
 
                 <div class="btn-con">
@@ -55,17 +54,16 @@
         });
     </script>
 
-
-
-    <!-- ========================= ABOUT ========================= -->
+    <!-- ========================= MAIN ========================= -->
     <main>
+
+        <!-- ========================= ABOUT ========================= -->
         <section class="container about" id="about">
             <div class="main-title">
-                <h2>About <span>Me</span></h2>
+                <h2>About <span>Me</span><span class="bg-text">RG</span></h2>
             </div>
 
-            <div class="about-container">
-
+            <div class="about-container reveal">
                 <div class="left-about">
                     <h4>About Me</h4>
                     <p>
@@ -83,7 +81,6 @@
                 </div>
 
                 <div class="right-about">
-
                     <div class="about-item">
                         <div class="abt-text">
                             <p class="large-text">30+</p>
@@ -97,12 +94,11 @@
                             <p class="small-text">Freelance Cloud Clients</p>
                         </div>
                     </div>
-
                 </div>
             </div>
 
             <!-- SKILLS -->
-            <div class="about-stats">
+            <div class="about-stats reveal">
                 <h4 class="stat-title">My Skills</h4>
 
                 <div class="progress-bars">
@@ -156,12 +152,10 @@
                 </div>
             </div>
 
-
             <!-- TIMELINE -->
             <h4 class="stat-title">My Timeline</h4>
 
-            <div class="timeline">
-
+            <div class="timeline reveal">
                 <div class="timeline-item">
                     <div class="tl-icon"><i class="fas fa-briefcase"></i></div>
                     <p class="tl-duration">2023 - 2024</p>
@@ -189,7 +183,6 @@
                     <h5>Masters in Computer Science <span>- IIM Bangalore</span></h5>
                     <p>Learned advanced programming and development practices.</p>
                 </div>
-
             </div>
         </section>
 
@@ -198,18 +191,18 @@
         <!-- ========================= PORTFOLIO ========================= -->
         <section class="container" id="portfolio">
             <div class="main-title">
-                <h2>My <span>Portfolio</span></h2>
+                <h2>My <span>Portfolio</span><span class="bg-text">RG</span></h2>
             </div>
 
             <h2 class="port-text">
                 <i>Here are some of my real cloud, DevOps, BI and IoT projects.</i>
             </h2>
 
-            <div class="portfolios">
-
-                <div class="portfolio-item">
+            <div class="portfolios reveal">
+                <!-- Each portfolio-item can open modal on click -->
+                <div class="portfolio-item" data-modal-title="SkyStream AWS Cloud Migration" data-modal-description="Designed a secure AWS VPC architecture with public and private subnets, EC2 web servers, NAT gateway, internet gateway, and load balancing to support a highly available web application with monitoring and logging.">
                     <div class="image">
-                        <img src="src/img/port1.png">
+                        <img src="src/img/port1.png" alt="SkyStream AWS Cloud Migration">
                     </div>
                     <div class="portfolio-text">
                         <h4>SkyStream AWS Cloud Migration</h4>
@@ -224,9 +217,9 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-modal-title="IoT Smart Bin Prototype" data-modal-description="Built an Arduino-based IoT smart bin using HC-SR04 ultrasonic sensor, servo motor, LED and buzzer. The lid opens automatically when a user is detected, with audio and visual feedback, helping improve waste management for smart city environments.">
                     <div class="image">
-                        <img src="src/img/port2.png">
+                        <img src="src/img/port2.png" alt="IoT Smart Bin">
                     </div>
                     <div class="portfolio-text">
                         <h4>IoT Smart Bin Prototype</h4>
@@ -241,9 +234,9 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-modal-title="SmartChoice Retail BI Dashboard" data-modal-description="Developed an interactive Power BI dashboard for SmartChoice Ltd combining Sales, Products, and Stores data. Enabled managers to analyse revenue by store, product performance, and time trends, supporting better inventory and marketing decisions.">
                     <div class="image">
-                        <img src="src/img/port3.png">
+                        <img src="src/img/port3.png" alt="SmartChoice BI Dashboard">
                     </div>
                     <div class="portfolio-text">
                         <h4>SmartChoice Retail BI Dashboard</h4>
@@ -258,9 +251,9 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-modal-title="Innovate Ltd Cloud Security Assessment" data-modal-description="Conducted a detailed cloud security assessment of an AWS tenancy for Innovate Ltd, mapping risks to CIA and GDPR, and recommending IAM hardening, GuardDuty, Security Hub, encryption at rest/in transit, and network segmentation.">
                     <div class="image">
-                        <img src="src/img/port4.png">
+                        <img src="src/img/port4.png" alt="Cloud Security Assessment">
                     </div>
                     <div class="portfolio-text">
                         <h4>Innovate Ltd Cloud Security Assessment</h4>
@@ -275,9 +268,9 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-modal-title="CareConnect Telemedicine System" data-modal-description="Designed a cloud-based telemedicine and remote patient monitoring architecture for Save a Life Hospital Network (SLHN), integrating secure data flows, analytics, and improved patient access.">
                     <div class="image">
-                        <img src="src/img/port5.png">
+                        <img src="src/img/port5.png" alt="CareConnect Telemedicine">
                     </div>
                     <div class="portfolio-text">
                         <h4>CareConnect Telemedicine System</h4>
@@ -292,9 +285,9 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-modal-title="Cloud Engineer Portfolio Website" data-modal-description="Built a modern personal portfolio using HTML, CSS and JavaScript with glassmorphism, particle background and dark/light theme toggle to showcase my cloud, DevOps, BI and IoT projects.">
                     <div class="image">
-                        <img src="src/img/port7.png">
+                        <img src="src/img/port7.png" alt="Portfolio Website">
                     </div>
                     <div class="portfolio-text">
                         <h4>Cloud Engineer Portfolio Website</h4>
@@ -308,7 +301,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -317,23 +309,19 @@
         <!-- ========================= CONTACT ========================= -->
         <section class="container contact" id="contact">
             <div class="contact-container">
-
                 <div class="main-title">
-                    <h2>Hire <span>Me</span></h2>
+                    <h2>Hire <span>Me</span><span class="bg-text">RG</span></h2>
                 </div>
 
-                <div class="contact-content-con">
-
+                <div class="contact-content-con reveal">
                     <div class="left-contact">
                         <h4>Let's Connect</h4>
-
                         <p>
                             Have a project idea or want to chat about cloud technologies?  
                             Feel free to reach out — I'm always excited to collaborate!
                         </p>
 
                         <div class="contact-info">
-
                             <div class="contact-item">
                                 <div class="icon"><i class="fas fa-map-marker-alt"></i><span>Location</span></div>
                                 <p>: Bordon, England</p>
@@ -365,17 +353,19 @@
                     </div>
 
                     <div class="right-contact">
-                        <form action="" class="contact-form">
-
+                        <!-- EMAILJS form -->
+                        <form id="contact-form" class="contact-form">
                             <div class="input-control i-c-2">
-                                <input type="text" required placeholder="Your Name">
-                                <input type="email" required placeholder="Your Email">
+                                <input type="text" name="user_name" required placeholder="Your Name">
+                                <input type="email" name="user_email" required placeholder="Your Email">
                             </div>
 
-                            <div class="input-control"><input type="text" required placeholder="Enter Subject"></div>
+                            <div class="input-control">
+                                <input type="text" name="subject" required placeholder="Enter Subject">
+                            </div>
 
                             <div class="input-control">
-                                <textarea cols="30" rows="5" required placeholder="Your Message..."></textarea>
+                                <textarea name="message" cols="30" rows="5" required placeholder="Your Message..."></textarea>
                             </div>
 
                             <div class="submit-btn">
@@ -385,6 +375,7 @@
                                 </button>
                             </div>
 
+                            <p id="form-status" class="form-status"></p>
                         </form>
                     </div>
 
@@ -406,10 +397,26 @@
     <!-- Theme Switch -->
     <div class="theme-btn"><i class="fas fa-adjust"></i></div>
 
+    <!-- PORTFOLIO MODAL -->
+    <div class="portfolio-modal" id="portfolio-modal">
+        <div class="portfolio-modal-overlay"></div>
+        <div class="portfolio-modal-content">
+            <button class="portfolio-modal-close" id="portfolio-modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <!-- JS -->
     <script src="src/app.js"></script>
 </body>
 </html>
+
 
 
 
