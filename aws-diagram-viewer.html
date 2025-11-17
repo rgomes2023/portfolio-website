@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Diagram Viewer | Cloud Tools</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="aws-diagram-viewer.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body class="viewer-body">
+
+    <header class="viewer-header">
+        <h1>AWS Architecture Diagram Viewer</h1>
+        <p>Upload your AWS diagrams and explore them with zoom & pan controls.</p>
+        <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    </header>
+
+    <main class="viewer-container">
+
+        <!-- Controls -->
+        <div class="toolbar">
+            <label class="upload-btn">
+                <i class="fas fa-upload"></i> Upload Diagram
+                <input type="file" id="file-input" accept="image/*">
+            </label>
+
+            <button id="zoom-in"><i class="fas fa-search-plus"></i></button>
+            <button id="zoom-out"><i class="fas fa-search-minus"></i></button>
+            <button id="reset"><i class="fas fa-sync"></i></button>
+            <button id="fullscreen"><i class="fas fa-expand"></i></button>
+        </div>
+
+        <!-- Canvas Container -->
+        <div id="canvas-wrapper">
+            <img id="diagram" src="" alt="AWS Diagram">
+        </div>
+
+    </main>
+
+    <!-- JS -->
+    <script src="aws-diagram-viewer.js"></script>
+
+</body>
+</html>
