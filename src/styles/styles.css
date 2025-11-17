@@ -1,205 +1,320 @@
-/* ===============================
+/* ===========================================
    GLOBAL RESET
-================================== */
+=========================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #0b1628;
-    color: #fff;
+    color: #ffffff;
+    background: #0b1628;
     overflow-x: hidden;
 }
 
-/* ===============================
-   SECTION VISIBILITY FIX ✔
-================================== */
-[data-section] {
+/* Smooth transitions */
+.section {
     display: none;
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.35s ease-in-out;
+    transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
-/* SECTION ACTIVE */
 .active-section {
     display: block !important;
     opacity: 1 !important;
     transform: translateY(0px) !important;
 }
 
-/* ===============================
-   HEADER SECTION
-================================== */
-.header {
+/* ===========================================
+   HERO SECTION (Home)
+=========================================== */
+
+.hero {
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.header-content {
-    display: flex;
-    gap: 4rem;
-    align-items: center;
-}
-
-.profile-photo-wrapper {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    border: 4px solid #1e90ff;
-    overflow: hidden;
-}
-
-.profile-photo {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
-/* ===============================
+/* Dark cloud gradient background */
+.hero {
+    background: linear-gradient(135deg, #0b1628 0%, #0e1a33 40%, #122449 100%);
+}
+
+/* Subtle overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(1px);
+}
+
+/* HERO CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* LEFT - Hero Image */
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-photo {
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 5px solid #1e90ff;
+    object-fit: cover;
+    box-shadow: 0px 8px 32px rgba(30, 144, 255, 0.30);
+}
+
+/* RIGHT - TEXT */
+.hero-right {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.hero-title span {
+    color: #1e90ff;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #9bb8ff;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    max-width: 500px;
+    margin-bottom: 30px;
+    color: #dce7ff;
+}
+
+/* Hero button */
+.hero-btn {
+    background: #1e90ff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    background: #0f67d4;
+}
+
+/* ===========================================
+   ABOUT SECTION
+=========================================== */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.left-about {
+    flex: 1;
+}
+
+.right-about {
+    flex: 1;
+    display: flex;
+    gap: 2rem;
+}
+
+.about-item {
+    background: #13203a;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+}
+
+.large-text {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #1e90ff;
+}
+
+.small-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ===========================================
    TITLES
-================================== */
+=========================================== */
 .main-title h2 {
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 40px;
 }
 
 .main-title span {
     color: #1e90ff;
 }
 
-/* ===============================
-   ABOUT
-================================== */
-.about-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 4rem;
-    padding-top: 2rem;
+/* ===========================================
+   SKILLS
+=========================================== */
+.progress-bars {
+    margin-top: 3rem;
 }
 
-/* ===============================
-   PORTFOLIO GRID
-================================== */
+.progress-bar {
+    margin-bottom: 20px;
+}
+
+.progress-title {
+    font-size: 1rem;
+}
+
+.progress-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress {
+    width: 70%;
+    height: 10px;
+    background: #253552;
+    border-radius: 10px;
+}
+
+.progress span {
+    display: block;
+    height: 10px;
+    background: #1e90ff;
+    border-radius: 10px;
+}
+
+/* ===========================================
+   PORTFOLIO
+=========================================== */
+
 .portfolios {
-    margin-top: 3rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .portfolio-item {
-    background-color: #13203a;
+    background: #13203a;
+    padding: 20px;
     border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.3s;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .portfolio-item:hover {
     transform: translateY(-6px);
+    background: #1b2f4d;
 }
 
-.portfolio-item .image img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.hover-items {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: 0.3s ease;
-}
-
-.portfolio-item:hover .hover-items {
-    opacity: 1;
-}
-
-.hover-items .icon {
-    background-color: #1e90ff;
-    padding: 0.8rem 1rem;
-    border-radius: 8px;
-    color: white;
-    font-size: 1.3rem;
-}
-
-/* ===============================
+/* ===========================================
    CONTACT
-================================== */
+=========================================== */
+
 .contact-container {
-    padding: 2rem 0;
+    margin-top: 2rem;
+    background: #13203a;
+    padding: 2rem;
+    border-radius: 12px;
 }
 
-/* ===============================
-   BOTTOM NAVIGATION ✔
-================================== */
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* ===========================================
+   NAVIGATION BUTTONS (BOTTOM MENU)
+=========================================== */
+
 .controls {
     position: fixed;
-    bottom: 2rem;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 1.5rem;
-    background: rgba(255,255,255,0.04);
-    padding: 0.7rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 12px 20px;
     border-radius: 40px;
+    gap: 1.2rem;
     backdrop-filter: blur(6px);
-    z-index: 1000;
+    z-index: 900;
 }
 
 .control {
     width: 45px;
     height: 45px;
-    background: #1f2d48;
+    background: #1b2a44;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: 0.25s;
+    transition: 0.25s ease;
     color: #9cb4d8;
+    font-size: 1.2rem;
 }
 
 .control:hover {
     background: #1e90ff;
-    color: #fff;
+    color: white;
 }
 
 .active-btn {
     background: #1e90ff !important;
-    color: white !important;
+    color: #fff !important;
 }
 
-/* ===============================
+/* ===========================================
    THEME TOGGLE
-================================== */
+=========================================== */
 .theme-btn {
     position: fixed;
-    top: 1.3rem;
-    right: 1.3rem;
+    top: 25px;
+    right: 25px;
     width: 50px;
     height: 50px;
-    background: #1f2d48;
-    color: white;
+    background: #1b2a44;
     border-radius: 50%;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 900;
+    font-size: 1.2rem;
     transition: 0.3s;
 }
 
@@ -207,18 +322,34 @@ body {
     background: #1e90ff;
 }
 
-/* ===============================
-   LIGHT MODE
-================================== */
-body.light-mode {
-    background: #f6f6f9;
-    color: #0b1628;
+/* ===========================================
+   MOBILE RESPONSIVE
+=========================================== */
+@media (max-width: 900px) {
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+    }
+
+    .hero-photo {
+        width: 260px;
+        height: 260px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .controls {
+        gap: 1rem;
+    }
 }
 
-body.light-mode .portfolio-item {
-    background: #ffffff;
-}
-
-body.light-mode .control {
-    background: #fff;
-}
