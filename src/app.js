@@ -1,41 +1,41 @@
-/* ======================================================
-   Rodrigo Gomes Portfolio - Navigation Logic (Fixed)
-====================================================== */
+/* ===========================================
+   SECTION NAVIGATION
+=========================================== */
 
-const sections = document.querySelectorAll("[data-section]");
 const controls = document.querySelectorAll(".control");
-const body = document.body;
+const sections = document.querySelectorAll("[data-section]");
 
-// Set HOME active on first load
-document.getElementById("home").classList.add("active-section");
-
-/* ======================================================
-   NAVIGATION BUTTONS
-====================================================== */
-controls.forEach(control => {
-    control.addEventListener("click", function () {
-
-        // Active button styling
+controls.forEach(btn => {
+    btn.addEventListener("click", () => {
+        
+        // Remove active highlight from buttons
         document.querySelector(".active-btn").classList.remove("active-btn");
-        this.classList.add("active-btn");
+        btn.classList.add("active-btn");
+
+        const target = btn.getAttribute("data-id");
 
         // Hide all sections
-        sections.forEach(sec => sec.classList.remove("active-section"));
+        sections.forEach(section => {
+            section.classList.remove("active-section");
+        });
 
-        // Show selected one
-        const target = this.dataset.id;
-        document.getElementById(target).classList.add("active-section");
+        // Show the selected section
+        const activeSection = document.getElementById(target);
+        activeSection.classList.add("active-section");
 
+        // Optional smooth scroll to top
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 });
 
-/* ======================================================
-   LIGHT / DARK MODE
-====================================================== */
+/* ===========================================
+   THEME TOGGLE
+=========================================== */
+
 document.querySelector(".theme-btn").addEventListener("click", () => {
-    body.classList.toggle("light-mode");
+    document.body.classList.toggle("light-mode");
 });
+
 
 
 
