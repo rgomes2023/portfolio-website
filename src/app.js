@@ -101,4 +101,3 @@ scrollTopBtn.addEventListener("click", () => {
 // 6. INITIAL STATE: Set HOME active
 // ======================================================
 document.getElementById("home").classList.add("active-section");
-
