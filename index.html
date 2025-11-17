@@ -241,8 +241,6 @@
             </h2>
 
             <div class="portfolios reveal">
-                <!-- Each portfolio-item opens a modal (click anywhere except links) -->
-
                 <div class="portfolio-item"
                      data-modal-title="SkyStream AWS Cloud Migration"
                      data-modal-description="Designed a secure AWS VPC architecture with public and private subnets, EC2 web servers, NAT gateway, internet gateway, and load balancing to support a highly available web application with monitoring and logging.">
@@ -411,16 +409,24 @@
                         <!-- EMAILJS form -->
                         <form id="contact-form" class="contact-form">
                             <div class="input-control i-c-2">
-                                <input type="text" name="user_name" required placeholder="Your Name">
-                                <input type="email" name="user_email" required placeholder="Your Email">
+                                <div class="input-field">
+                                    <label for="user_name">Your Name</label>
+                                    <input id="user_name" type="text" name="user_name" required placeholder="Your Name">
+                                </div>
+                                <div class="input-field">
+                                    <label for="user_email">Your Email</label>
+                                    <input id="user_email" type="email" name="user_email" required placeholder="Your Email">
+                                </div>
                             </div>
 
                             <div class="input-control">
-                                <input type="text" name="subject" required placeholder="Enter Subject">
+                                <label for="subject">Subject</label>
+                                <input id="subject" type="text" name="subject" required placeholder="Enter Subject">
                             </div>
 
                             <div class="input-control">
-                                <textarea name="message" cols="30" rows="5" required placeholder="Your Message..."></textarea>
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" cols="30" rows="5" required placeholder="Your Message..."></textarea>
                             </div>
 
                             <div class="submit-btn">
@@ -471,6 +477,7 @@
     <script src="src/app.js"></script>
 </body>
 </html>
+
 
 
 
