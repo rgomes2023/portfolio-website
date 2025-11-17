@@ -50,6 +50,7 @@
 
     </header>
 
+    <!-- PARTICLES JS -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {
@@ -343,7 +344,9 @@
                     <div class="hover-items">
                         <h3>Project Source</h3>
                         <div class="icons">
-                            <a class="icon" href="https://github.com/rgomes2023/portfolio-website" target="_blank"><i class="fab fa-github"></i></a>
+                            <a class="icon" href="https://github.com/rgomes2023/portfolio-website" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -451,7 +454,8 @@
     <!-- THEME SWITCH -->
     <div class="theme-btn"><i class="fas fa-adjust"></i></div>
 
-    <script src="src/app.js"></script>
+    <!-- Load JS LAST for everything to work -->
+    <script src="src/app.js" defer></script>
 
 </body>
 </html>
