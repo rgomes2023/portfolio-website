@@ -704,19 +704,65 @@ section {
   font-size: 1rem;
 }
 
-.contact-content-con .contact-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.85rem;
-  padding: 0.6rem 0.9rem;
-  background: white;
-  color: rgb(42, 41, 41);
-  border-radius: 10px;
+/* New contact info grid/cards */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-.contact-item p {
-  margin-left: 0.5rem;
+.contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.15);
+}
+
+.contact-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+  font-size: 1.1rem;
+}
+
+.contact-card-body h5 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  margin-bottom: 0.15rem;
+}
+
+.contact-card-body p {
+  font-size: 1rem;
+  color: #111827;
+  margin: 0;
+}
+
+/* “Open to” chips */
+.contact-availability {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact-availability .pill {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.4);
 }
 
 /* Social icons */
