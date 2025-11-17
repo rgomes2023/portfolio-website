@@ -1,39 +1,34 @@
 (function () {
-    // ===============================
-    //  PAGE NAVIGATION BUTTONS
-    // ===============================
+    // PAGE SWITCHING
     const controls = document.querySelectorAll(".control");
-    const sections = document.querySelectorAll(".container");
-    const body = document.querySelector(".main-content");
+    const sections = document.querySelectorAll("section");
 
-    controls.forEach(control => {
-        control.addEventListener("click", function () {
-            // Remove active button
+    controls.forEach(button => {
+        button.addEventListener("click", function() {
+            // Remove active style from buttons
             document.querySelector(".active-btn").classList.remove("active-btn");
             this.classList.add("active-btn");
 
-            // Remove active section
+            // Switch visible section
+            const sectionId = this.dataset.id;
             document.querySelector(".active").classList.remove("active");
-
-            // Add active to the correct section
-            const sectionId = this.getAttribute("data-id");
             document.getElementById(sectionId).classList.add("active");
         });
     });
 
-    // ===============================
-    //  THEME SWITCH (Dark / Light)
-    // ===============================
-    const themeBtn = document.querySelector(".theme-btn");
-    themeBtn.addEventListener("click", () => {
-        body.classList.toggle("light-mode");
+    // THEME SWITCH
+    document.querySelector(".theme-btn").addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+
+        // FIX PARTICLE BACKGROUND BUG
+        const particles = document.getElementById("particles-js");
+        if (particles) particles.style.zIndex = "-1";
     });
 
+    // ENSURE PARTICLES BEHIND CONTENT ALWAYS
+    setTimeout(() => {
+        const particles = document.getElementById("particles-js");
+        if (particles) particles.style.zIndex = "-1";
+    }, 500);
+
 })();
-
-
-
-
-
-
-
