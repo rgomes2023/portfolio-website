@@ -1176,3 +1176,17 @@ section {
     z-index: 5;
 }
 
+/* ================================
+   FIX HOME PAGE BORDER / BACKGROUND
+   ================================= */
+#home.container.header {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    transform: none !important;
+}
+
+
