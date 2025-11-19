@@ -1159,3 +1159,20 @@ section {
   background-size: 300% 300%;
   animation: gradientFlow 10s infinite alternate ease-in-out;
 }
+
+/* FIX — ensures all pages display properly */
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.container.active {
+    display: block !important;
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    position: relative !important;
+    z-index: 5;
+}
+
